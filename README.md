@@ -66,24 +66,23 @@ You will be prompted with a multi-choice interactive menu, allowing you to navig
 Authentication is handled using bearer tokens retrieved via the `auth` module. It supports:
 
 - Cribl.Cloud – Obtain tokens from the API Reference in the UI
-- Customer-managed – Token retrieved by logging in with credentials (`POST /auth/login`)
+- Customer-managed – This program was not intended to On-prem deployments. You would need to change the config.py and some of the API endpoints.
 
 Once authenticated, the token is automatically added to all API requests.
 
-## API Coverage
+Multi-module Python script for interacting with the Cribl API, including:
 
-This CLI covers the following Cribl API capabilities:
+auth.py: Handles API authentication
 
-- `/auth/login`
-- `/system/health`
-- `/system/lookups`
-- `/system/metrics/query`
-- `/packs`
-- `/m/<group>/inputs`, `/outputs`, `/routes`, `/pipelines`
-- `/m/<group>/variables`
-- `/workers`
-- `/regex`
-- `/certificates`
+client.py: Sends HTTP requests to Cribl endpoints
+
+pipelines.py: Lists, exports, or modifies pipelines
+
+routes.py: Manages routing configurations
+
+status.py: Fetches system and pipeline status info
+
+utils.py: Provides helper functions for logging and data formatting
 
 Refer to the [Cribl API Documentation](https://docs.cribl.io/api/) for the complete endpoint list and behavior.
 

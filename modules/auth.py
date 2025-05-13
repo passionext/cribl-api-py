@@ -1,5 +1,5 @@
 import requests
-from config import USER, PASSWORD, API_AUTH_URL
+from config.config import USER, PASSWORD, API_AUTH_URL
 
 class AuthError(Exception):
     """Custom exception for authentication errors."""
